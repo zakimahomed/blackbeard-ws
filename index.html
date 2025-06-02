@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackbeard Founder Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: #FAF9F6; /* Light cream background */
+            --text: #333333; /* Dark grey for main text */
+            --accent: #666666; /* Medium grey for accents/secondary text */
+            --primary-action: #007bff; 
+            --section-spacing: 3rem; /* Consistent spacing between sections */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7; 
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .logo-placeholder {
+            text-align: center;
+            padding: 1rem 0 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem; 
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2rem; /* Space before hero */
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text); 
+        }
+
+        h1 { /* Hero section H1 specifically handled by .hero-section h1 */
+            font-size: 2.2rem; 
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: var(--section-spacing);
+            border-bottom: 1px solid #e0e0e0; 
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        h4 { 
+            font-size: 1.2rem;
+            font-family: 'Nunito', sans-serif; 
+            font-weight: 700;
+            margin-top: 1.5rem;
+            color: var(--accent);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        a {
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem; 
+        }
+
+        li {
+            margin-bottom: 0.75rem; 
+            font-size: 1.05rem;
+        }
+
+        .hero-section {
+            text-align: left; 
+            margin-bottom: var(--section-spacing);
+        }
+
+        .hero-section h1 {
+            font-size: 2.2rem; 
+            text-align: left; 
+            margin-bottom: 1.5rem; 
+        }
+        
+        .hero-section .hero-intro-text {
+            font-size: 1.15rem; 
+            color: var(--text); 
+            max-width: 100%; 
+            margin-bottom: 1rem;
+        }
+        
+        /* .hero-section .hero-tagline was here, now replaced by key-standout-sentence for that specific p tag */
+        
+        .section-intro-p { 
+             font-size: 1.15rem;
+             color: var(--accent);
+             margin-bottom: 2rem;
+        }
+
+        .key-standout-sentence { /* New class for standardized standout sentences */
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--accent);
+            margin-top: 1.5rem; 
+            margin-bottom: 1.5rem; 
+            display: block; 
+            font-weight: normal; /* Ensuring it's not bold unless specifically intended */
+        }
+
+        .agent-section {
+            background-color: #ffffff; 
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+        }
+
+        .agent-section h3 {
+            margin-top: 0; 
+            color: #4A5568; 
+        }
+        
+        .problem-solution strong {
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .placeholder-image {
+            width: 100%;
+            max-width: 512px; 
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+            background-color: #FFFFFF; 
+            border: 1px solid #e0e0e0; 
+        }
+
+        .calendly-embed-container {
+            width: 100%;
+            height: 700px; 
+            overflow: hidden; 
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .calendly-embed-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0; 
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: var(--section-spacing);
+            padding: 2rem;
+            background-color: #f0f4f8; 
+            border-radius: 8px;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--accent);
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .logo-placeholder {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-section h1 { 
+                font-size: 2rem;
+            }
+            
+            .hero-section .hero-intro-text {
+                font-size: 1.05rem;
+            }
+            /* .hero-section .hero-tagline responsive style removed as class is changed */
+
+            h1 { 
+                font-size: 2.2rem; 
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .key-standout-sentence { /* Adjust standout sentence for mobile */
+                font-size: 1.1rem;
+            }
+
+            li {
+                font-size: 1rem;
+            }
+
+            .calendly-embed-container {
+                height: 600px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="img/logo.png" alt="Blackbeard logo" class="logo-placeholder" style="width: 200px; height: auto;">
+
+    <header class="hero-section">
+        <h1>You're Irreplaceable. And That's a Problem.</h1>
+        <p class="hero-intro-text">As a Founder, CEO, or key GTM leader, your touch is gold. You drive demand, close deals, and build movements. But you can't be everywhere. You can't clone yourself. Marketing struggles to match your authenticity. Sales needs you for the big wins. Customer success knows your engagement is key. <strong>You're the bottleneck.</strong></p>
+        <p class="key-standout-sentence">Blackbeard gives you an AI "Twin". Scale your unique impact, not just your headcount.</p>
+    </header>
+
+    <img src="img/i1.png" alt="Blackbeard AI Digital Twin" class="placeholder-image">
+
+    <section id="journey">
+        <h2>My Journey: AI, Trenches, and a Revelation</h2>
+        <p>I'm <a href="https://www.linkedin.com/in/zakimahomed/" target="_blank" rel="noopener noreferrer">Zaki Mahomed</a>. For 10+ years, I've lived B2B growth. My last company, Ultrarev, aimed for autonomous outbound, right before ChatGPT changed everything. AI wasn't just a feature; it was a full reset. So, I paused Ultrarev.</p>
+        <p>For the next 18+ months, I became a "shadow operator" – deep in the AI trenches with top B2B teams, driving real revenue. No theory, just results. The biggest lesson?</p>
+        <p class="key-standout-sentence">The sharpest B2B weapon for modern, lean teams is Leader-Led GTM. But as we established, you are the bottleneck! Enter your Twin.</p>
+        </section>
+
+    <section id="solution">
+        <h2>The Solution: Blackbeard – AI Agents for Your Leader-Led GTM</h2>
+        <p>This isn't about another piece of generic software. Blackbeard offers a new way to operate. We've built specialized Agents designed to help you leverage AI and systematically multiply your effectiveness.</p>
+        <p><strong>Why "Blackbeard"?</strong> Because every legendary captain needed a formidable extension of their will to conquer new territories. Our mission is to help you generate more high-value business, deepen critical relationships, rapidly test new market ideas, and become an even greater force multiplier for your team.</p>
+        <img src="img/i2.png" alt="Blackbeard AI Agents" class="placeholder-image">
+        <p><strong>How do we do it?</strong> This is a true partnership. We meticulously learn your unique strengths, authentic voice, and GTM challenges. Then, we build and customize proprietary AI Agents – tailored AI-powered workflows – to automate crucial tasks and amplify your genuine impact.</p>
+        <p class="key-standout-sentence">We help you adopt AI, transforming you into that 10x 'Pirate' Founder who rewrites the rules.</p>
+    </section>
+
+    <section id="agents">
+        <h2>Meet Your Blackbeard Agents: Problems Solved.</h2>
+        <p>Here's how our AI Agents help you scale your influence:</p>
+
+        <div class="agent-section">
+            <h3>Growth & Outreach Agent</h3>
+            <p> You miss chances because you can't watch every prospect, account, event, community, and website for the perfect entry point.</p>
+            <p class="problem-solution"><strong>Solution:</strong> Proactively flags high-signal opportunities (exec changes, social cues). Drafts hyper-personalized outreach in your voice, so you connect meaningfully, fast.</p>
+        </div>
+
+        <div class="agent-section">
+            <h3>Customer Expansion & Relationship Agent</h3>
+            <p>Key customer relationships need timely, personal touches that often get missed.</p>
+            <p class="problem-solution"><strong>Solution:</strong> Spots risks and expansion opportunities in your customer base. Automates founder-level touchpoints at critical moments, boosting retention and LTV.</p>
+        </div>
+        <div class="agent-section">
+            <h3>Content & Influence Agent</h3>
+            <p> You have game-changing insights, but no time to consistently create and share content.</p>
+            <p class="problem-solution"><strong>Solution:</strong> Transforms your core thinking (captured efficiently with me, Zaki) into authentic content (posts, video snippets, articles). Build your influence and attract inbound, systematically.</p>
+        </div>
+
+        <div class="agent-section">
+            <h3>Market Sensing Agent</h3>
+            <p> You need to quickly test ideas (messaging, features) with the right people and get real feedback.</p>
+            <p class="problem-solution"><strong>Solution:</strong> Deploys targeted micro-campaigns or surveys in your voice. Synthesizes feedback into actionable insights for your team.</p>
+        </div>
+
+        <div class="agent-section">
+            <h3>Measurement Agent</h3>
+            <p> Proving the ROI of your personal involvement and keeping CRM data clean is a nightmare.</p>
+            <p class="problem-solution"><strong>Solution:</strong> Tracks your Leader-Led GTM impact on pipeline, revenue, and retention in real-time. Auto-syncs with your CRM. Less admin, more clarity.</p>
+        </div>
+
+        <img src="img/i3.png" alt="Blackbeard Agent System" class="placeholder-image">
+    
+    </section>
+
+    <section id="partnership">
+        <h2>The Blackbeard Partnership: Co-Creating the Future 🤝</h2>
+        <p>This isn't mass-market SaaS. We want a select group of founding design partners: brave Category Creating B2B Founders, CEOs, and ambitious front-facing GTM leaders.</p>
+        
+        <h3>What You Get:</h3>
+        <ul>
+            <li>Custom-built AI Agents tailored to solve your critical GTM challenges.</li>
+            <li>Hands-on strategy sessions with me (Zaki) and my team to build your AI GTM plan using our complete best-practices playbook.</li>
+            <li>A significantly discounted founding partner rate.</li>
+        </ul>
+
+        <h3>What We Ask:</h3>
+        <ul>
+            <li>Your expertise and honest, direct feedback.</li>
+            <li>Willingness to be a success story as we build this together.</li>
+            <li>A shared drive to solve your biggest GTM problems with AI.</li>
+        </ul>
+    </section>
+
+    <section id="cta" class="cta-section">
+        <h2>Ready to Multiply Your Impact?</h2>
+        <p>If you're a B2B Founder or GTM leader who knows your personal involvement is crucial, and you're ready to systematically amplify that impact with AI – I want to talk.</p>
+        <p>Book a call with me directly. 👇</p>
+        
+        <div class="calendly-embed-container">
+            <iframe src="https://calendly.com/bookzaki/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=faf9f6&text_color=333333&primary_color=007bff" 
+                    title="Schedule time with Zaki">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        © <script>document.write(new Date().getFullYear())</script> Blackbeard. All rights reserved.
+    </footer>
+
+</body>
+</html>
